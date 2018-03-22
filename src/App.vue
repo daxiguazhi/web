@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <!--<home></home>-->
-    <router-link :to="{name: 'Home'}">Home</router-link>
     <router-view/>
   </div>
 </template>
