@@ -3,11 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import YDUI from 'vue-ydui'/* 相当于import YDUI from 'vue-ydui/ydui.rem.js' */
-import 'vue-ydui/dist/ydui.rem.css'
-/* 使用px：import 'vue-ydui/dist/ydui.px.css'; */
+import Mint from 'mint-ui'
 
-Vue.use(YDUI)
+Vue.use(Mint)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

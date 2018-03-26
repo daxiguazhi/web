@@ -1,7 +1,10 @@
 <template>
   <div>
-    <yd-navbar title="NavBar"></yd-navbar>
-    这是首页
+    <mt-swipe :auto="4000">
+      <mt-swipe-item>1</mt-swipe-item>
+      <mt-swipe-item>2</mt-swipe-item>
+      <mt-swipe-item>3</mt-swipe-item>
+    </mt-swipe>
     <router-link :to="{name: 'Login'}">登陆</router-link>
     <router-link :to="{name: 'register'}">注册</router-link>
     <router-view></router-view>
@@ -14,10 +17,4 @@ export default {
 }
 </script>
 <style type="text/css">
-  .navbar-bottom-line-color:after {
-    border-color: blue !important;
-  }
-  .yd-navbar navbar-bottom-line-color{
-    height: 8rem !important;
-  }
 </style>
