@@ -16,9 +16,20 @@
   </div>
 </template>
 <script>
+import http from 'axios'
 export default {
   name: 'login',
+  created () {
+    this.getData()
+  },
   methods: {
+    getData () {
+      http.get('/selectexpress', {
+
+      }).then(data => {
+
+      })
+    },
     handleClose: function () {
       console.log('返回')
     },
