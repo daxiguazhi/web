@@ -2,10 +2,12 @@
   <div id="home">
     <mt-header fixed title="首页"></mt-header>
     <div id="swipe">
-      <mt-swipe :auto="4000">
-        <mt-swipe-item>1</mt-swipe-item>
-        <mt-swipe-item>2</mt-swipe-item>
-        <mt-swipe-item>3</mt-swipe-item>
+      <mt-swipe :auto="400000">
+        <mt-swipe-item class="swip-item-1 item">
+
+        </mt-swipe-item>
+        <mt-swipe-item class="swip-item-2 item">2</mt-swipe-item>
+        <mt-swipe-item class="swip-item-3 item">3</mt-swipe-item>
       </mt-swipe>
     </div>
     <div id="login">
@@ -28,10 +30,12 @@ export default {
     margin-top: 200px;
 }
   #swipe{
+    margin-top: 40px;
     height: 200px;
     width: 100%;
   }
-  mt-swipe-item{
-    background: red;
+  .swip-item-1{
+    background: url('../img/IMG_5510.jpg') no-repeat;
+    background-size: 100% 100%;
   }
 </style>
