@@ -24,9 +24,9 @@ export default {
   },
   methods: {
     getData () {
-      http.get('/selectexpress', {
+      http.post('/pa_enterance', {
 
-      }).then(data => {
+      }).then((data) => {
 
       })
     },
