@@ -16,45 +16,31 @@
     <div id="register">
       <router-link :to="{name: 'register'}">注册</router-link>
     </div>-->
-    <ul
-      v-infinite-scroll="loadMore"
-      infinite-scroll-disabled="loading"
-      infinite-scroll-distance="10"
-    >
-      <li v-for = " item in list ">{{ item }}</li>
-    </ul>
+    <div id="main"></div>
+    <img :src="img">
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'home',
-  data () {
-    return {
-      list: [{
-        a: 1
-      }]
-    }
-  },
-  methods: {
-    loadMore () {
-      this.loading = true
-      setTimeout(() => {
-        let last = this.list[this.list.length - 1]
-        for (let i = 1; i <= 10; i++) {
-          this.list.push(last + i)
-        }
-        this.loading = false
-      }, 2500)
+  import img from '@/img/IMG_5510.jpg';
+  export default {
+    name: 'home',
+    data () {
+      return {
+        img: img
+      }
+    },
+    methods: {
+      loadMore () {
+      }
     }
   }
-}
 </script>
 <style scoped>
   #login{
     margin-top: 200px;
-}
+  }
   #swipe{
     margin-top: 40px;
     height: 200px;
@@ -63,5 +49,12 @@ export default {
   .swip-item-1{
     background: url('../img/IMG_5510.jpg') no-repeat;
     background-size: 100% 100%;
+  }
+  #main{
+    margin-top: 40px;
+  }
+  img{
+    width: 100%;
+    border-radius: 50%;
   }
 </style>
