@@ -17,23 +17,60 @@
       <router-link :to="{name: 'register'}">注册</router-link>
     </div>-->
     <div id="main"></div>
-    <img :src="img">
+    <!--<img :src="img">-->
+    <!--<img :src="image">-->
+    <div  v-for="item in imgList" >
+      <img :src="item.url" :alt="item.label">
+    </div>
+    <children :background="background" :label="'咸鱼'" @setBackground="setBackground"></children>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+  import axios from 'axios'
   import img from '@/img/IMG_5510.jpg';
+  import children from './children.vue'
   export default {
+    components:{
+      children
+    },
     name: 'home',
     data () {
       return {
-        img: img
+        img: img,
+        image:'',
+        imgList:[
+          {
+            url:'a',
+            label:'a'
+          },
+          {
+            url:'b',
+            label:'b'
+          },
+          {
+            url:'c',
+            label:'c'
+          },
+        ],
+        background:'background:blue',
       }
+    },
+    created(){
+      const root = this;
+      axios.get('/public/test/Test/index').then(function (res) {
+        root.image = res.data;
+        console.log(res.data);
+      })
     },
     methods: {
       loadMore () {
+      },
+      setBackground(val){
+        this.background = val;
       }
+
     }
   }
 </script>

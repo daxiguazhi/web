@@ -11,12 +11,12 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/xapi': {
-        target: 'https://b.kuaidimao.com/',
+      '/public': {
+        target: 'http://web.com/',
         changeOrigin: true,
         //secure: false,
         pathRewrite: {
-          '^/xapi': '/xapi'
+          '^/public': '/public'
         },
         headers:{
           'Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6Ijk1In0.eyJpc3MiOiJzZHQiLCJhdWQiOiJzZHRfY3VzdG9tZXIiLCJqdGkiOiI5NSIsImlhdCI6MTUyMDQ5MjY5NCwiZXhwIjoxNTIwNzUxODk0LCJ1aWQiOiI5NSIsInNoYXJlIjowfQ.6wn05zzUu48t6lgsmzsWSfiC-70WBkoCJm8JkU7-IZQ'
