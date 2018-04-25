@@ -19,8 +19,13 @@
     <div id="main"></div>
     <!--<img :src="img">-->
     <!--<img :src="image">-->
-    <div  v-for="item in imgList" >
-      <img :src="item.url" :alt="item.label">
+    <div  v-for="item in image" >
+      <div id="head">
+        <img src="../img/head.jpg" alt="">
+      <span>Mynickname</span></div>
+      <img :src="item.img" :alt="item.label">
+      <div id="footer">{{item.lable}}留言</div>
+      <div id="sign">这是图标</div>
     </div>
     <children :background="background" :label="'咸鱼'" @setBackground="setBackground"></children>
     <router-view></router-view>
@@ -59,7 +64,7 @@
     },
     created(){
       const root = this;
-      axios.get('/public/test/Test/index').then(function (res) {
+      axios.get('public/test/Test/index').then(function (res) {
         root.image = res.data;
         console.log(res.data);
       })
@@ -90,8 +95,31 @@
   #main{
     margin-top: 40px;
   }
+  #head{
+    height:50px;
+    line-height: 50px;
+  }
+  #head img{
+    height:40px;
+    width:40px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+  #head span{
+
+  }
+  #footer{
+    height:50px;
+    border-bottom:1px dashed rgba(83, 77, 77, 0.5)
+  }
+  #sign{
+    height:30px;
+    border-bottom: solid 12px rgba(216, 210, 210, 0.5)
+  }
+
   img{
     width: 100%;
-    border-radius: 50%;
+    /*border-radius: 50%;*/ /*圆形头像框*/
   }
 </style>
