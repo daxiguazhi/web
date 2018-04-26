@@ -23,19 +23,6 @@ export default {
     this.getData()
   },
   methods: {
-    getData () {
-      http.post('/pa_enterance', {
-
-      }).then((data) => {
-
-      })
-    },
-    handleClose: function () {
-      console.log('返回')
-    },
-    more: function () {
-      console.log('更多')
-    }
   }
 }
 </script>

@@ -20,14 +20,29 @@
     <!--<img :src="img">-->
     <!--<img :src="image">-->
     <div  v-for="item in image" >
-      <div id="head">
-        <img src="../img/head.jpg" alt="">
-      <span>Mynickname</span></div>
-      <img :src="item.img" :alt="item.label">
-      <div id="footer">{{item.lable}}留言</div>
-      <div id="sign">这是图标</div>
+      <imgframe :img="item.img" :label="item.lable"></imgframe>
     </div>
-    <children :background="background" :label="'咸鱼'" @setBackground="setBackground"></children>
+    <div id="footer">
+      <mt-tabbar v-model="selected" fixed>
+        <mt-tab-item id="">
+          <img slot="icon" src="../img/icon/office.svg">
+          首页
+        </mt-tab-item>
+        <mt-tab-item id="">
+          <img slot="icon" src="../img/icon/attachment.svg">
+          推荐
+        </mt-tab-item>
+        <mt-tab-item id="">
+          <img slot="icon" src="../img/icon/earth.svg">
+          广场
+        </mt-tab-item>
+        <mt-tab-item id="">
+          <img slot="icon" src="../img/icon/personal-center.svg">
+          个人中心
+        </mt-tab-item>
+      </mt-tabbar>
+    </div>
+    <!--<children :background="background" :label="'咸鱼'" @setBackground="setBackground"></children>-->
     <router-view></router-view>
   </div>
 </template>
@@ -36,9 +51,11 @@
   import axios from 'axios'
   import img from '@/img/IMG_5510.jpg';
   import children from './children.vue'
+  import imgframe from '../components/imgframe.vue'
   export default {
     components:{
-      children
+      children,
+      imgframe
     },
     name: 'home',
     data () {
@@ -80,9 +97,6 @@
   }
 </script>
 <style scoped>
-  #login{
-    margin-top: 200px;
-  }
   #swipe{
     margin-top: 40px;
     height: 200px;
@@ -94,32 +108,7 @@
   }
   #main{
     margin-top: 40px;
-  }
-  #head{
-    height:50px;
-    line-height: 50px;
-  }
-  #head img{
-    height:40px;
-    width:40px;
-    border-radius: 50%;
-    margin-left: 10px;
-    margin-top: 5px;
-  }
-  #head span{
-
-  }
-  #footer{
-    height:50px;
-    border-bottom:1px dashed rgba(83, 77, 77, 0.5)
-  }
-  #sign{
-    height:30px;
     border-bottom: solid 12px rgba(216, 210, 210, 0.5)
   }
 
-  img{
-    width: 100%;
-    /*border-radius: 50%;*/ /*圆形头像框*/
-  }
 </style>

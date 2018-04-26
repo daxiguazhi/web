@@ -1,6 +1,8 @@
 body{
   margin: 0;
+  font-family:华文行楷;
 }
 .mint-header{
-  background-color: #4a565f;
+  background-color: #ffffff;
+  color: black;
 }
