@@ -19,8 +19,8 @@
     <div id="main"></div>
     <!--<img :src="img">-->
     <!--<img :src="image">-->
-    <div  v-for="item in image" >
-      <imgframe :img="item.img" :label="item.lable"></imgframe>
+    <div  v-for="item in imgList" >
+      <imgframe :nickname="item.nickname" :img="item.img" :tag="item.tag"></imgframe>
     </div>
     <div id="footer">
       <mt-tabbar v-model="selected" fixed>
@@ -64,16 +64,76 @@
         image:'',
         imgList:[
           {
-            url:'a',
-            label:'a'
+            nickname:'麋鹿',
+            img:'http://47.106.139.76/img/IMG_20140821_074346_HDR.jpg',
+            tag:[
+              {
+                value:'摄影'
+              },
+              {
+                value:'旅行'
+              },
+              {
+                value:'风景'
+              },
+              {
+                value:'摄影分享'
+              }
+            ]
           },
           {
-            url:'b',
-            label:'b'
+            nickname:'环球旅行',
+            img:'http://47.106.139.76/img/IMG_20141213_161942_HDR.jpg',
+            tag:[
+              {
+                value:'摄影'
+              },
+              {
+                value:'旅行'
+              },
+              {
+                value:'风景'
+              },
+              {
+                value:'摄影分享'
+              }
+            ]
           },
           {
-            url:'c',
-            label:'c'
+            nickname:'也许',
+            img:'http://47.106.139.76/img/IMG_20150115_135939.jpg',
+            tag:[
+              {
+                value:'摄影'
+              },
+              {
+                value:'旅行'
+              },
+              {
+                value:'风景'
+              },
+              {
+                value:'摄影分享'
+              }
+            ]
+          },
+          {
+            nickname:'Jork',
+            img:'http://47.106.139.76/img/IMG_20141205_100512_HDR.jpg',
+            tag:[
+              {
+                value:'摄影'
+              },
+              {
+                value:'旅行'
+              },
+              {
+                value:'风景'
+              },
+              {
+                value:'摄影分享'
+              }
+            ]
           },
         ],
         background:'background:blue',
@@ -92,7 +152,6 @@
       setBackground(val){
         this.background = val;
       }
-
     }
   }
 </script>
@@ -108,7 +167,7 @@
   }
   #main{
     margin-top: 40px;
-    border-bottom: solid 12px rgba(216, 210, 210, 0.5)
+    border-bottom: solid 12px rgb(232, 232, 232)
   }
 
 </style>
