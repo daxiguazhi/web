@@ -1,6 +1,9 @@
 <template>
   <div id="home">
-    <mt-header fixed title="首页"></mt-header>
+    <mt-header fixed title="首页">
+      <mt-button slot="right" @click="login">登陆</mt-button>
+    </mt-header>
+
     <!--<div id="swipe">
       <mt-swipe :auto="400000">
         <mt-swipe-item class="swip-item-1 item">
@@ -22,7 +25,7 @@
     <div  v-for="item in imgList" >
       <imgframe :nickname="item.nickname" :img="item.img" :tag="item.tag"></imgframe>
     </div>
-    <div id="footer">
+    <!--<div id="footer">
       <mt-tabbar v-model="selected" fixed>
         <mt-tab-item id="">
           <img slot="icon" src="../img/icon/office.svg">
@@ -41,7 +44,7 @@
           个人中心
         </mt-tab-item>
       </mt-tabbar>
-    </div>
+    </div>-->
     <!--<children :background="background" :label="'咸鱼'" @setBackground="setBackground"></children>-->
     <router-view></router-view>
   </div>
@@ -147,7 +150,8 @@
       })
     },
     methods: {
-      loadMore () {
+      login: function () {
+        this.$router.push({path:'/login'})
       },
       setBackground(val){
         this.background = val;
